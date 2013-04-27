@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSite</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to 'Link', 'http://www.google.com' %>
+Hello World. This text is generate by rails.
+<% for sheet in @sheets %>
+    <%= link_to 'Show', sheet %>
+    <%= link_to 'New Sheet', new_sheet_path %>
+<% end %>
+</body>
+</html>
