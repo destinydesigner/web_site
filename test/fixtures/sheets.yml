@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  'no': MyString
+  'no': 
   description: MyString
 
 two:
-  'no': MyString
+  'no': 
   description: MyString
