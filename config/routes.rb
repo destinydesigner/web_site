@@ -1,4 +1,16 @@
 WebSite::Application.routes.draw do
+  resources :exercises
+
+
+  resources :days
+
+
+  resources :weeks
+
+
+  resources :programs
+
+
   resources :sheets
 
 

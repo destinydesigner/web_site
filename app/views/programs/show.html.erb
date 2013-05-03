@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Level:</b>
+  <%= @program.level %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @program.name %>
+</p>
+<h2>Weeks</h2>
+<% @program.weeks.each do |week|  %>
+<div class='week'>
+    <p><b><%= 'Week ' + week.order.to_s %></b></p>
+    <% week.days.each do |day| %>
+    <div class='day'>
+        <b><%= 'Day ' + day.order.to_s + ':' + day.section %></b>
+            <% day.exercises.each do |exercise| %>
+                <p><%= exercise.name %></p>
+            <% end %>
+    </div>
+    <% end %>
+</div>
+<% end %>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

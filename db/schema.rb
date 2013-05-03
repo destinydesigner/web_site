@@ -10,7 +10,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427134313) do
+ActiveRecord::Schema.define(:version => 20130503153515) do
+
+  create_table "days", :force => true do |t|
+    t.integer  "order"
+    t.string   "section"
+    t.integer  "week_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "days", ["week_id"], :name => "index_days_on_week_id"
+
+  create_table "exercises", :force => true do |t|
+    t.string   "name"
+    t.integer  "day_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "exercises", ["day_id"], :name => "index_exercises_on_day_id"
+
+  create_table "programs", :force => true do |t|
+    t.integer  "level"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "sheets", :force => true do |t|
     t.string   "no"
@@ -18,5 +44,14 @@ ActiveRecord::Schema.define(:version => 20130427134313) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "weeks", :force => true do |t|
+    t.integer  "order"
+    t.integer  "program_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "weeks", ["program_id"], :name => "index_weeks_on_program_id"
 
 end
