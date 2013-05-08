@@ -13,3 +13,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+init = function() {
+    $(".nav").bind('click', function(e) {
+        var target = e.target;
+        while(true) {
+            if (target.nodeName == 'li' || target.nodeName == 'LI') {
+                $(target).addClass('active');
+                break;
+            }
+            target = target.parentNode;
+        }
+
+        var child = target.parentNode.childNodes;
+        for (var i = 0; i < child.length; i++) {
+            if (child[i] == target) {
+                continue;
+            }
+
+            $(child[i]).removeClass('active');
+        }
+    });
+}

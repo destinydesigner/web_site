@@ -4,6 +4,7 @@ class CreateDays < ActiveRecord::Migration
       t.integer :order
       t.string :section
       t.references :week
+      t.references :exercise
 
       t.timestamps
     end

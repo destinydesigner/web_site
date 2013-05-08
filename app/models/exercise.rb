@@ -1,4 +1,4 @@
 class Exercise < ActiveRecord::Base
-  belongs_to :day
+  has_and_belongs_to_many :days
   attr_accessible :name
 end
