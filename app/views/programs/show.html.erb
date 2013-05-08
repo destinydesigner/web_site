@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <b>Level:</b>
@@ -24,4 +24,28 @@
 </div>
 <% end %>
 
-<%= link_to 'Back', programs_path %>
+<%= link_to 'Back', programs_path %> -->
+<h1>Program <%= @program.name %></h1>
+<div class="tabbable" id="tabs-660877">
+    <ul class="nav nav-tabs">
+    <% @program.weeks.each do |week| %>
+        <li class="<%= if week.order == 1 then 'active' end %>">
+            <a href="#panel-<%= week.order %>" data-toggle="tab">Week <%= week.order %></a>
+        </li>
+    <% end %>
+    </ul>
+    <div class="tab-content">
+    <% @program.weeks.each do |week| %>
+        <div class="tab-pane <%= if week.order == 1 then 'active' end %>" id="panel-<%= week.order %>">
+        <div class="row-fluid">
+            <% week.days.each do |day| %>
+            <% @day = day %>
+            <div class="span3">
+            <%= render :template => "days/show" %>
+            </div>
+            <% end %>
+        </div>
+        </div>
+    <% end %>
+    </div>
+</div>

@@ -1,22 +1,25 @@
-<h1>Listing programs</h1>
-
-<table>
-  <tr>
-    <th>Level</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @programs.each do |program| %>
-  <tr>
-    <td><%= program.level %></td>
-    <td><%= link_to program.name, program %></td>
-  </tr>
-<% end %>
+<h1>Programs</h1>
+<table class="table table-hover table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>
+                Level
+            </th>
+            <th>
+                Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @programs.each do |program| %>
+        <tr>
+            <td>
+                <%= program.level %>
+            </td>
+            <td>
+                <%= link_to program.name, program %>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
 </table>
-
-<br />
-
-<!-- <%= link_to 'New Program', new_program_path %> -->
