@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503153515) do
+ActiveRecord::Schema.define(:version => 20130515143444) do
+
+  create_table "day_exercise_maps", :force => true do |t|
+    t.integer  "day_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "days", :force => true do |t|
     t.integer  "order"
@@ -30,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130503153515) do
   end
 
   add_index "exercises", ["day_id"], :name => "index_exercises_on_day_id"
+  add_index "exercises", ["name"], :name => "index_exercises_on_name", :unique => true
 
   create_table "programs", :force => true do |t|
     t.integer  "level"

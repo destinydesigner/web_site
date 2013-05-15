@@ -12,9 +12,9 @@
         <div class="tab-pane <%= if week.order == 1 then 'active' end %>" id="panel-<%= week.order %>">
         <div class="row-fluid">
             <% week.days.each do |day| %>
-            <% @day = day %>
             <div class="span3">
-            <%= render :template => "days/show" %>
+            <% @day = day %>
+            <%= render :template => '/days/show' %>
             </div>
             <% end %>
         </div>

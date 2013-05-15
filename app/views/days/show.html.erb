@@ -7,12 +7,13 @@
     </tr>
 </thead>
 <tbody>
-    <% @day.exercises.each do |exercise| %>
-    <tr>
-        <td>
-            <%= exercise.name %>
-        </td>
-    </tr>
+    <% exercises_of_day @day.id %>
+    <% @exercises.each do |e| %>
+        <tr>
+            <td>
+                <%= e.name %>
+            </td>
+        </tr>
     <% end %>
 </tbody>
 </table>
