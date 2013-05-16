@@ -1,15 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h3>
+    <%= @exercise.name %>
+</h3>
 
 <p>
-  <b>Name:</b>
-  <%= @exercise.name %>
+    <%= @exercise.annotation %>
 </p>
 
-<p>
-  <b>Day:</b>
-  <%= @exercise.day %>
-</p>
-
-
-<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
-<%= link_to 'Back', exercises_path %>
+<!--<%= link_to 'Back', exercises_path %>-->

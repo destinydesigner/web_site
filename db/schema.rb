@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515143444) do
+ActiveRecord::Schema.define(:version => 20130516030107) do
 
   create_table "day_exercise_maps", :force => true do |t|
     t.integer  "day_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130515143444) do
     t.integer  "day_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "annotation"
   end
 
   add_index "exercises", ["day_id"], :name => "index_exercises_on_day_id"

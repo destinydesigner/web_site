@@ -11,7 +11,7 @@
     <% @exercises.each do |e| %>
         <tr>
             <td>
-                <%= e.name %>
+                <%= link_to e.name, e %>
             </td>
         </tr>
     <% end %>
