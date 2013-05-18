@@ -1,6 +1,6 @@
 <h1>Exercises</h1>
-
-<table class="table table-hover table-condensed table-striped">
+<% @sections = ["", "PUSH", "PULL", "CORE", "LEGS & GLUTES"] %>
+<!--<table class="table table-hover table-condensed table-striped">
     <thead>
         <tr>
             <th>Id</th>
@@ -9,13 +9,46 @@
         </tr>
     </thead>
     <tbody>
-    <% @exercises.each do |exercise| %>
         <tr>
-            <td><%= exercise.id %></td>
-            <td><%= link_to exercise.name, exercise %></td>
-            <td><%= exercise.annotation %></td>
         </tr>
-    <% end %>
     </tbody>
-</table>
+</table> -->
+
+
+
+
+<div class="tabbable" id="tabs-660877">
+<ul class="nav nav-tabs">
+    <% for i in 1..4 %>
+        <li class="<%= if i == 1 then 'active' end %>">
+            <a href="#panel-<%= i %>" data-toggle="tab"><%= @sections[i] %></a>
+        </li>
+    <% end %>
+</ul>
+<div class="tab-content">
+    <% for i in 1..4 %>
+        <div class="tab-pane <%= if i == 1 then 'active' end %>" id="panel-<%= i %>">
+            <div class="row-fluid">
+                <!-- table begin -->
+                <table class="table table-hover table-condensed table-striped">
+                <tbody>
+                    <% @exercises.each do |e| %>
+                        <% if e.section_id != i then next end %>
+                        <tr>
+                            <td width="120px">
+                                <%= link_to e.name, e %>
+                            </td>
+                            <td>
+                                <%= e.annotation %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+                </table>
+                <!-- table end-->
+            </div>
+        </div>
+    <% end %>
+</div>
+</div>
 
