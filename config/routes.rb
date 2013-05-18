@@ -1,9 +1,4 @@
 WebSite::Application.routes.draw do
-  get "login/index"
-
-  resources :users
-
-
   resources :exercises
 
 
