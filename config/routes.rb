@@ -1,5 +1,6 @@
 WebSite::Application.routes.draw do
-  get "login/index"
+  devise_for :users
+
 
   resources :users
 
