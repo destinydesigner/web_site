@@ -1,0 +1,25 @@
+<%= form_for(@day_exercise_map) do |f| %>
+  <% if @day_exercise_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@day_exercise_map.errors.count, "error") %> prohibited this day from being saved:</h2>
+
+      <ul>
+      <% @day_exercise_map.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day_id %><br />
+    <%= f.number_field :day_id %>
+  </div>
+  <div class="field">
+    <%= f.label :exercise_id %><br />
+    <%= f.number_field :exercise_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

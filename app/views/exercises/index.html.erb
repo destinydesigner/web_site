@@ -35,6 +35,9 @@
                     <% @exercises.each do |e| %>
                         <% if e.section_id != i then next end %>
                         <tr>
+                            <td width="20px">
+                                <%= e.id %>
+                            </td>
                             <td width="120px">
                                 <%= link_to e.name, e %>
                             </td>

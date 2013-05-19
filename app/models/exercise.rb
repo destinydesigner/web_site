@@ -1,3 +1,3 @@
 class Exercise < ActiveRecord::Base
-  attr_accessible :name, :section, :section_id, :level
+  attr_accessible :name, :section, :section_id, :level, :annotation
 end

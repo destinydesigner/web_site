@@ -16,12 +16,11 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :section %><br />
-    <%= f.text_field :section  %>
-  </div>
-  <div class="field">
     <%= f.label :section_id %><br />
-    <%= f.text_field :section_id  %>
+    <%= f.radio_button :section_id, 1, :value => 1  %>PUSH<br />
+    <%= f.radio_button :section_id, 2, :value => 2  %>PULL<br />
+    <%= f.radio_button :section_id, 3, :value => 3  %>CORE<br />
+    <%= f.radio_button :section_id, 4, :value => 4 %>LEGS & GLUTES<br />
   </div>
   <div class="field">
     <%= f.label :level %><br />

@@ -3,6 +3,8 @@ WebSite::Application.routes.draw do
 
   resources :exercises
 
+  resources :day_exercise_maps
+
 
   resources :days
 
