@@ -1,4 +1,5 @@
 class DayExerciseMapsController < ApplicationController
+    before_filter :authenticate_user!, :only => :new
   # GET /day_exercise_maps/new
   # GET /day_exercise_maps/new.json
   def new
