@@ -60,39 +60,41 @@
                                 <li class="">
                                     <a href="<%= exercises_path %>">Exercises</a>
                                 </li>
-                                <!--<li class="dropdown">
-                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown<strong class="caret"></strong></a>
+                           </ul>
+                            <ul class="nav pull-right">
+                                <li>
+                                <%= link_to "New Map", new_day_exercise_map_path %>
+                                </li>
+                                <li class="">
+                                <%= link_to "New Exercise", new_exercise_path %>
+                                </li>
+
+                                <!-- user component begin -->
+                                <% if user_signed_in? then %>
+                                <!-- dropdown begin -->
+                                <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= current_user.email %><strong class="caret"></strong></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="#">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Something else here</a>
+                                        <%= link_to "My Programs", programs_path %>
                                         </li>
                                         <li class="divider">
                                         </li>
-                                        <li class="nav-header">
+                                        <!--<li class="nav-header">
                                             Nav header
-                                        </li>
+                                            </li>-->
                                         <li>
-                                            <a href="#">Separated link</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">One more separated link</a>
+                                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                                         </li>
                                     </ul>
-                                    </li> -->
-                            </ul>
-                            <ul class="nav pull-right">
-                                <li>
-                                <a href="<%= new_day_exercise_map_path %>">New Map</a>
                                 </li>
-                                <li class="">
-                                <a href="<%= new_exercise_path %>">New Exercise</a>
-                                </li>
+                                <% else %>
+                                    <li>
+                                    <%= link_to "Sign in", new_user_session_path %>
+                                    </li>
+                                <!-- dropdown end -->
+                                <!-- user component end -->
+                                <% end %>
                             </ul>
                         </div>
                         
