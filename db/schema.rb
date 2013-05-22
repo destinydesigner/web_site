@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518175643) do
+ActiveRecord::Schema.define(:version => 20130522142537) do
 
   create_table "day_exercise_maps", :force => true do |t|
     t.integer  "day_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130518175643) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "sheets", :force => true do |t|
