@@ -16,15 +16,6 @@
     bottom: 0px;
 }
 
-label[type="password"] {
-    background: url(/img/key_32*32.png) no-repeat;
-    padding: 0px 0px 0px 38px;
-}
-
-label[type="email"] {
-    background: url(/img/email_32*32.png) no-repeat;
-    padding: 0px 0px 0px 38px;
-}
 .form-signin {
     max-width: 300px;
     padding: 19px 29px 29px;
@@ -44,10 +35,18 @@ label[type="email"] {
     margin-bottom: 10px;
 }
 
-.form-signin input[type="text"],
-.form-signin input[type="password"] {
+.form-signin input[type="text"] {
     font-size: 16px;
     height: auto;
-    margin-bottom: 15px;
     padding: 7px 9px;
+}
+
+.form-signin .control-label {
+    width: 70px;
+    float: left;
+    text-align: right;
+}
+
+.form-signin .controls {
+    margin-left: 80px;
 }
